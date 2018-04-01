@@ -150,7 +150,7 @@ Open the browser and type in address
 http://YourInstancePublicDNS:6006
 ```
 
-![screenshot](/images/screenshot.png)
+![screenshot](/images/tensorboard_train.png)
 
 ### Evaluate trained model
 
@@ -172,3 +172,10 @@ Visualize eval results
 ```
 tensorboard --logdir=eval/
 ```
+
+Open the browser and type in address
+```
+http://YourInstancePublicDNS:6006
+```
+
+![screenshot](/images/tensorboard_eval.png)
