@@ -1,4 +1,4 @@
-# Training SSD with TensorFlow Object Detection API on AWS
+# Training SSD <br>with TensorFlow Object Detection API on AWS
 
 <br>
 
