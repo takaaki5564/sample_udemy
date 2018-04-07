@@ -1,4 +1,4 @@
-# Training VOC dataset <br>with TensorFlow Object Detection API on AWS
+# Training SSD with TensorFlow Object Detection API on AWS
 
 <br>
 
