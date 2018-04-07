@@ -209,7 +209,7 @@ Open the browser and type in address
 http://YourInstancePublicDNS:6006
 ```
 
-![screenshot](/images/tensorboard_eval.png)
+![screenshot](/images/train_result.png)
 
 
 <br>
