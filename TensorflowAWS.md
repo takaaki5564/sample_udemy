@@ -6,10 +6,17 @@
 
 ### Log in to your Deep Learning AMI (Ubuntu), instance type = p2.xlarge
 
-Activate tensorflow with python3.6
+Create a conda environment
 
 ```
-source activate tensorflow_p36
+conda create -n tensorflow python=3.6 anaconda
+```
+
+Install tensorflow-gpu for python 3.6
+
+```
+pip install --ignore-installed --upgrade \
+https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.6.0-cp36-cp36m-linux_x86_64.whl
 ```
 
 ### Setup Tensorflow
