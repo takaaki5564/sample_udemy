@@ -40,10 +40,9 @@ python setup.py install
 
 Build slim model
 ```
-cd models/research/slim
+cd ./slim
 python setup.py build
 python setup.py install
-cd models/research
 ```
 
 Set path
@@ -53,6 +52,7 @@ echo 'export PYTHONPATH=$PYTHONPATH:~/tensorflow/models/research:~/tensorflow/mo
 
 Check build
 ```
+cd ../
 python object_detection/builders/model_builder_test.py
 ```
 
