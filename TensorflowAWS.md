@@ -1,5 +1,6 @@
-# Training with TensorFlow Object Detection API on AWS
+# Training VOC dataset with TensorFlow Object Detection API on AWS
 
+## Preparation
 
 ### Log in to your Deep Learning AMI (Ubuntu), instance type = p2.xlarge
 
@@ -9,9 +10,9 @@ Activate tensorflow with python3.6
 source activate tensorflow_p36
 ```
 
-### Setup Tensorflow Model
+### Setup Tensorflow
 
-Download Tensorflow model from git
+Download Tensorflow object detection model from git
 
 ```
 cd ~
@@ -46,7 +47,7 @@ Check build
 python object_detection/builders/model_builder_test.py
 '''
 
-### Prepare Dataset (VOC)
+### Prepare VOC dataset
 
 Upgrade xml
 
@@ -84,6 +85,8 @@ python ./dataset_tools/create_pascal_tf_record.py --data_dir=./dataset/VOCtrain/
  --year=merged ¥
  --output_path=./data/pascal_voc2007-2012train/pascal.record
 ```
+
+### Edit configuration
 
 Edit your own config file
 ```
@@ -131,7 +134,7 @@ mkdir my_model
 python ./train.py --logtostderr --train_dir=./my_model --pipeline_config_path=ssd_inception_v3_voc.config
 ```
 
-### Monitoring training progress on Tensorboard
+## Monitoring progress on Tensorboard
 
 Launch Tensorboard process
 ```
@@ -153,7 +156,7 @@ http://YourInstancePublicDNS:6006
 
 ![screenshot](/images/tensorboard_train.png)
 
-### Evaluate trained model
+### Evaluate trained model on Tensorboard
 
 Install pycocotool
 ```
@@ -183,7 +186,7 @@ http://YourInstancePublicDNS:6006
 ![screenshot](/images/tensorboard_eval.png)
 
 
-### Retrain model
+## Retrain model
 
 If you want to retrain the model, edit your own config file as follows.
 
