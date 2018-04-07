@@ -86,12 +86,12 @@ mkdir data/pascal_voc2007-2012train
 
 Serialize xml for training data
 ```
-python ./dataset_tools/create_pascal_tf_record.py --data_dir=./dataset/VOCtest/VOCdevkit ¥
- --year=VOC2007 ¥
- --set=test ¥
+python ./dataset_tools/create_pascal_tf_record.py --data_dir=./dataset/VOCtest/VOCdevkit \
+ --year=VOC2007 \
+ --set=test \
  --output_path=./data/pascal_voc2007test/pascal.record
-python ./dataset_tools/create_pascal_tf_record.py --data_dir=./dataset/VOCtrain/VOCdevkit ¥
- --year=merged ¥
+python ./dataset_tools/create_pascal_tf_record.py --data_dir=./dataset/VOCtrain/VOCdevkit \
+ --year=merged \
  --output_path=./data/pascal_voc2007-2012train/pascal.record
 ```
 
