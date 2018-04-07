@@ -93,7 +93,11 @@ python ./dataset_tools/create_pascal_tf_record.py --data_dir=./dataset/VOCtrain/
 ### Download pre-trained model of base network
 
 Pre-trained models of base network is listed here.
+
 https://github.com/tensorflow/models/tree/master/research/slim
+
+
+<br>
 
 Now we use inception_v3 model as the base network.
 ```
