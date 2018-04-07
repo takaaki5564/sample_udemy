@@ -188,7 +188,7 @@ Install pycocotool
 ```
 sudo pip install Cython
 git clone https://github.com/cocodataset/cocoapi
-cd PythonAPI
+cd pycoco/cocoapi/PythonAPI
 python setup.py build
 python setup.py install
 ```
