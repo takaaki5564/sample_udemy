@@ -1,4 +1,4 @@
-# Training VOC dataset with TensorFlow Object Detection API on AWS
+# Training VOC dataset <br>with TensorFlow Object Detection API on AWS
 
 ## Preparation
 
@@ -43,9 +43,9 @@ echo 'export PYTHONPATH=$PYTHONPATH:~/tensorflow/models/research:~/tensorflow/mo
 ```
 
 Check build
-'''
+```
 python object_detection/builders/model_builder_test.py
-'''
+```
 
 ### Prepare VOC dataset
 
