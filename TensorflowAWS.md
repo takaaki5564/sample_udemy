@@ -1,5 +1,6 @@
 # Training VOC dataset <br>with TensorFlow Object Detection API on AWS
 
+<br>
 ## Preparation
 
 ### Log in to your Deep Learning AMI (Ubuntu), instance type = p2.xlarge
@@ -86,6 +87,21 @@ python ./dataset_tools/create_pascal_tf_record.py --data_dir=./dataset/VOCtrain/
  --output_path=./data/pascal_voc2007-2012train/pascal.record
 ```
 
+<br>
+### Download pre-trained model of base network
+
+Pre-trained models of base network is listed here.
+https://github.com/tensorflow/models/tree/master/research/slim
+
+Now we use inception_v3 model as the base network.
+```
+mkdir my_model
+cd ./my_model
+wget http://download.tensorflow.org/models/inception_v3_2016_08_28.tar.gz
+tar -zxvf inception_v3_2016_08_28.tar.gz
+```
+<br>
+
 ### Edit configuration
 
 Edit your own config file
@@ -130,10 +146,10 @@ eval_input_reader: {
 
 ### Start training
 ```
-mkdir my_model
 python ./train.py --logtostderr --train_dir=./my_model --pipeline_config_path=ssd_inception_v3_voc.config
 ```
 
+<br>
 ## Monitoring progress on Tensorboard
 
 Launch Tensorboard process
@@ -186,6 +202,7 @@ http://YourInstancePublicDNS:6006
 ![screenshot](/images/tensorboard_eval.png)
 
 
+<br>
 ## Retrain model
 
 If you want to retrain the model, edit your own config file as follows.
