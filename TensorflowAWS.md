@@ -1,7 +1,7 @@
 # Training with TensorFlow Object Detection API on AWS
 
 
-### Log in to your Deep Learning AMI (Ubuntu)
+### Log in to your Deep Learning AMI (Ubuntu), instance type = p2.xlarge
 
 Activate tensorflow with python3.6
 
@@ -11,7 +11,7 @@ source activate tensorflow_p36
 
 ### Setup Tensorflow Model
 
-Git clone Tensorflow model
+Download Tensorflow model from git
 
 ```
 cd ~
@@ -87,8 +87,8 @@ python ./dataset_tools/create_pascal_tf_record.py --data_dir=./dataset/VOCtrain/
 
 Edit your own config file
 ```
-cp ./samples/configs/ssd_mobilenet_v1_pets.config ./ssd_mobilenet_v1_voc.config
-vim ./ssd_mobilenet_v1_voc.config
+cp ./samples/configs/ssd_inception_v3_pets.config ./ssd_inception_v3_voc.config
+vim ./ssd_inception_v3_voc.config
 ```
 
 * Change num_class
@@ -103,8 +103,8 @@ model {
     :
     
   }
-  #fine_tune_checkpoint: "./model/model.ckpt"
-  from_detection_checkpoint: true
+  fine_tune_checkpoint: "./my_model/inception_v3.ckpt"
+  from_detection_checkpoint: false
   :
   
 train_input_reader: {
@@ -127,14 +127,15 @@ eval_input_reader: {
 
 ### Start training
 ```
-python ./train.py --logtostderr --train_dir=./models --pipeline_config_path=ssd_mobilenet_v1_voc.config
+mkdir my_model
+python ./train.py --logtostderr --train_dir=./my_model --pipeline_config_path=ssd_inception_v3_voc.config
 ```
 
 ### Monitoring training progress on Tensorboard
 
 Launch Tensorboard process
 ```
-tensorboard --logdir=./models/
+tensorboard --logdir=./my_model/
 ```
 
 Edit "Network & Security" on your EC2 dashboard.
@@ -165,12 +166,13 @@ python setup.py install
 
 Evaluate trained model
 ```
-python eval.py --logtostderr --pipeline_config_path=ssd_mobilenet_v1_voc.config --checkpoint_dir=models/ --eval_dir=eval
+mkdir my_eval
+python eval.py --logtostderr --pipeline_config_path=ssd_inception_v3_voc.config --checkpoint_dir=my_model/ --eval_dir=my_eval/
 ```
 
 Visualize eval results
 ```
-tensorboard --logdir=eval/
+tensorboard --logdir=my_eval/
 ```
 
 Open the browser and type in address
@@ -180,3 +182,25 @@ http://YourInstancePublicDNS:6006
 
 ![screenshot](/images/tensorboard_eval.png)
 
+
+### Retrain model
+
+Edit your own config file
+```
+vim ./ssd_inception_v3_voc.config
+```
+
+ * Comment out chekpoint for base model
+ * Set from_detection_checkpoint as "true"
+ 
+```
+  #fine_tune_checkpoint: "./my_model/inception_v3.ckpt"
+  from_detection_checkpoint: true
+  :
+  
+```
+
+Start training
+```
+python ./train.py --logtostderr --train_dir=./my_model --pipeline_config_path=ssd_inception_v3_voc.config
+```
