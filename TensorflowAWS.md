@@ -185,7 +185,8 @@ http://YourInstancePublicDNS:6006
 
 ### Retrain model
 
-Edit your own config file
+If you want to retrain the model, edit your own config file as follows.
+
 ```
 vim ./ssd_inception_v3_voc.config
 ```
