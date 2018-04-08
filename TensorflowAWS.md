@@ -203,7 +203,10 @@ python setup.py install
 Evaluate trained model
 ```
 mkdir my_eval
-python eval.py --logtostderr --pipeline_config_path=ssd_inception_v3_voc.config --checkpoint_dir=my_model/ --eval_dir=my_eval/
+python eval.py --logtostderr \
+ --pipeline_config_path=ssd_inception_v3_voc.config \
+ --checkpoint_dir=my_model/ \
+ --eval_dir=my_eval/
 ```
 
 Visualize eval results
