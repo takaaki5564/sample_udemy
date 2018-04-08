@@ -10,6 +10,7 @@ Create a conda environment
 
 ```
 conda create -n tensorflow python=3.6 anaconda
+source activate tensorflow
 ```
 
 Install tensorflow-gpu for python 3.6
