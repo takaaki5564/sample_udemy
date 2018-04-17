@@ -35,12 +35,12 @@ sudo apt-get -y install imagemagick
 
 ### Where is Data Path ?
 
-* Install path of ChainerCV
+* ChainerCV Install Path
 ```
 home/ubuntu/anaconda3/envs/chainer/lib/python3.6/site-packages
 ```
 
-* Download and Expanding path of Datasets
+* Expanded Datasets
 ```
 /home/ubuntu/.chainer/dataset/_dl_cache/
 /home/ubuntu/.chainer/dataset/pfnet/chainercv/voc/
@@ -55,3 +55,11 @@ home/ubuntu/anaconda3/envs/chainer/lib/python3.6/site-packages
 cd chainercv/example/ssd
 python train.py
 ```
+
+
+### Download data using scp
+
+```
+scp -i (keyfilename).pem ubuntu@52.40.30.xxx:/home/ubuntu/chainercv/examples/ssd/image/*.png .
+```
+Set your private key file name.
