@@ -36,11 +36,14 @@ sudo apt-get -y install imagemagick
 ### Where is Data Path ?
 
 * Install path of ChainerCV
+```
 home/ubuntu/anaconda3/envs/chainer/lib/python3.6/site-packages
+```
 
 * Download path of Datasets
+```
 /home/ubuntu/.chainer/dataset/_dl_cache/
-
+```
 
 <br>
 
