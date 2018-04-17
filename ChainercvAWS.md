@@ -40,10 +40,13 @@ sudo apt-get -y install imagemagick
 home/ubuntu/anaconda3/envs/chainer/lib/python3.6/site-packages
 ```
 
-* Download path of Datasets
+* Download and Expanding path of Datasets
 ```
 /home/ubuntu/.chainer/dataset/_dl_cache/
+/home/ubuntu/.chainer/dataset/pfnet/chainercv/voc/
 ```
+
+
 
 <br>
 
