@@ -46,7 +46,11 @@ home/ubuntu/anaconda3/envs/chainer/lib/python3.6/site-packages
 /home/ubuntu/.chainer/dataset/pfnet/chainercv/voc/
 ```
 
-
-
 <br>
+### Start Training
 
+
+```
+cd chainercv/example/ssd
+python train.py
+```
