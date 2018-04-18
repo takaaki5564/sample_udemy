@@ -4,3 +4,4 @@
 
 * [SSD training with Tensorflow Object Detection API on AWŚ](TensorflowAWS.md)
 
+* [SSD training with ChainerCV on AWŚ](ChainercvAWS.md)
