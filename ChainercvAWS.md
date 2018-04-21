@@ -59,7 +59,20 @@ python train.py
 
 ### Download data using scp
 
+Download data from server to local
 ```
 scp -i (keyfilename).pem ubuntu@52.40.30.xxx:/home/ubuntu/chainercv/examples/ssd/image/*.png .
 ```
-Set your private key file name.
+
+Upload data from local to server
+```
+scp -i (keyfilename).pem ./*.zip ubuntu@52.40.30.xxx:/home/ubuntu/
+```
+
+Please set your private key file name.
+
+
+### Train SSD with your own dataset
+
+image-labelling-tool
+https://github.com/yuyu2172/image-labelling-tool/tree/master/examples/ssd
