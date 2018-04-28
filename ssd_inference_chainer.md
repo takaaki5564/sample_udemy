@@ -2,6 +2,13 @@
 
 # ChainerCV SSD on Google Colaboratory
 
+
+### Check GPU
+```
+import tensorflow as tf
+tf.test.gpu_device_name()
+```
+
 ### Install Chainer and related libraries.
 
 ```
