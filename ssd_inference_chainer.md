@@ -41,7 +41,7 @@ from chainercv.visualizations import vis_bbox
 %matplotlib inline
 ```
 
-### Execute Inference
+### Execute Inference (GPU)
 
 ```
 model = SSD300(
@@ -50,6 +50,22 @@ model = SSD300(
 
 chainer.cuda.get_device_from_id(0).use()
 model.to_gpu()
+
+img = utils.read_image('dog-2265233_960_720.jpg', color=True)
+bboxes, labels, scores = model.predict([img])
+bbox, label, score = bboxes[0], labels[0], scores[0]
+
+vis_bbox(
+    img, bbox, label, score, label_names=voc_bbox_label_names)
+plt.show()
+```
+
+### Execute Inference (CPU)
+
+```
+model = SSD300(
+        n_fg_class=len(voc_bbox_label_names),
+        pretrained_model='voc0712')
 
 img = utils.read_image('dog-2265233_960_720.jpg', color=True)
 bboxes, labels, scores = model.predict([img])
