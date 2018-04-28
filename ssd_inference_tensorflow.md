@@ -1,13 +1,13 @@
 
 # Tensorflow SSD on Google Colaboratory
 
-Check GPU
+### Check GPU
 ```
 import tensorflow as tf
 tf.test.gpu_device_name()
 ```
 
-Install Tensorflow Objectdetection API and related libraries
+### Install Tensorflow Objectdetection API and related libraries
 ```
 !pip install matplotlib
 !git clone https://github.com/tensorflow/models.git
@@ -32,7 +32,7 @@ os.chdir('/content/models/research/object_detection/')
 ```
 
 
-Defein Python code
+### Defein Python code
 ```
 import numpy as np
 import sys
@@ -60,7 +60,7 @@ with detection_graph.as_default():
     tf.import_graph_def(od_graph_def, name='')
 ```    
 
-
+### Load label map
 
 ```
 label_map = label_map_util.load_labelmap('data/mscoco_label_map.pbtxt')
@@ -68,6 +68,7 @@ categories = label_map_util.convert_label_map_to_categories(label_map, max_num_c
 category_index = label_map_util.create_category_index(categories)
 ```
 
+### Define load function
 
 ```
 def load_image_into_numpy_array(image):
@@ -79,6 +80,7 @@ TEST_IMAGE_PATHS = [os.path.join(PATH_TO_TEST_IMAGES_DIR, 'image{}.jpg'.format(i
 IMAGE_SIZE = (18, 12)
 ```
 
+### Load images
 ```
 im = Image.open('./test_images/image1.jpg')
 im_arr = np.asarray(im)
@@ -86,12 +88,15 @@ plt.imshow(im_arr)
 plt.show()
 ```
 
+
 ```
 im = Image.open('./test_images/image2.jpg')
 im_arr = np.asarray(im)
 plt.imshow(im_arr)
 plt.show()
 ```
+
+### Define inference function
 
 ```
 def run_inference_for_single_image(image, graph):
@@ -141,30 +146,32 @@ def run_inference_for_single_image(image, graph):
   return output_dict
 ```
   
+### Execute inference
 ```
-  for image_path in TEST_IMAGE_PATHS:
-  image = Image.open(image_path)
-  # the array based representation of the image will be used later in order to prepare the
-  # result image with boxes and labels on it.
-  image_np = load_image_into_numpy_array(image)
-  # Expand dimensions since the model expects images to have shape: [1, None, None, 3]
-  image_np_expanded = np.expand_dims(image_np, axis=0)
-  # Actual detection.
-  output_dict = run_inference_for_single_image(image_np, detection_graph)
-  # Visualization of the results of a detection.
-  vis_util.visualize_boxes_and_labels_on_image_array(
-      image_np,
-      output_dict['detection_boxes'],
-      output_dict['detection_classes'],
-      output_dict['detection_scores'],
-      category_index,
-      instance_masks=None,
-      use_normalized_coordinates=True,
-      line_thickness=8)
-  plt.figure(figsize=IMAGE_SIZE)
-  plt.imshow(image_np)
+for image_path in TEST_IMAGE_PATHS:
+image = Image.open(image_path)
+# the array based representation of the image will be used later in order to prepare the
+# result image with boxes and labels on it.
+image_np = load_image_into_numpy_array(image)
+# Expand dimensions since the model expects images to have shape: [1, None, None, 3]
+image_np_expanded = np.expand_dims(image_np, axis=0)
+# Actual detection.
+output_dict = run_inference_for_single_image(image_np, detection_graph)
+# Visualization of the results of a detection.
+vis_util.visualize_boxes_and_labels_on_image_array(
+    image_np,
+    output_dict['detection_boxes'],
+    output_dict['detection_classes'],
+    output_dict['detection_scores'],
+    category_index,
+    instance_masks=None,
+    use_normalized_coordinates=True,
+    line_thickness=8)
+plt.figure(figsize=IMAGE_SIZE)
+plt.imshow(image_np)
 ```
 
+### Check inference results
 ```  
 (x,y,c) = np.shape(image_np)
 for i in range(len(output_dict['detection_classes'])):
