@@ -1,8 +1,8 @@
 
 
-### ChainerCV SSD on Google Colaboratory
+# ChainerCV SSD on Google Colaboratory
 
-Install Chainer and related libraries.
+### Install Chainer and related libraries.
 
 ```
 !apt -y install libcusparse8.0 libnvrtc8.0 libnvtoolsext1
@@ -10,7 +10,7 @@ Install Chainer and related libraries.
 !pip install cupy-cuda80 chainer
 ```
 
-Install ChainerCV and related libraries.
+### Install ChainerCV and related libraries.
 
 ```
 !pip install Pillow
@@ -20,12 +20,12 @@ Install ChainerCV and related libraries.
 !pip install chainercv
 ```
 
-Get Image
+### Get Image
 ```
 !wget https:xxx.jpg
 ```
 
-Import Libraries
+### Import Libraries
 
 ```
 import argparse
@@ -41,7 +41,7 @@ from chainercv.visualizations import vis_bbox
 %matplotlib inline
 ```
 
-Execute Inference
+### Execute Inference
 
 ```
 model = SSD300(
