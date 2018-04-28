@@ -11,24 +11,39 @@ tf.test.gpu_device_name()
 ```
 !pip install matplotlib
 !git clone https://github.com/tensorflow/models.git
+```
+
+```
 import os
 os.chdir("/content/models/research/")
 import sys
 sys.path.append('/content/models/research')
 sys.path.append('/content/models/research/slim')
 sys.path.append('/content/models/research/object_detection')
+```
+
+```
 !protoc object_detection/protos/*.proto --python_out=.
 !python setup.py build
 !python setup.py install
+```
+
+
+```
 os.chdir("/content/models/research/slim")
 !python setup.py build
 !python setup.py install
+```
+
+```
 os.chdir("/content/models/research")
 !python object_detection/builders/model_builder_test.py
+```
+
+```
 os.chdir('/content/models/research/object_detection/')
 !wget http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_2017_11_17.tar.gz
 !tar -xzvf ssd_mobilenet_v1_coco_2017_11_17.tar.gz
-!ls ./ssd_mobilenet_v1_coco_2017_11_17/
 ```
 
 
