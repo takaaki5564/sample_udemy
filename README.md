@@ -1,6 +1,8 @@
 # Sample code for Tensorflow SSD
 
-* [SSD inference sample on Google Colab](ssd_inference.ipynb) 
+* [SSD inference sample of ChainerCV on Google Colaboratory](ssd_inference_chainer.md) 
+
+* [SSD inference sample of Tensorflow on Google Colababoratory](ssd_inference_tensorflow.md) 
 
 * [SSD training with Tensorflow Object Detection API on AWŚ](TensorflowAWS.md)
 
