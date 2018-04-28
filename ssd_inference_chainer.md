@@ -7,7 +7,7 @@
 ```
 !apt -y install libcusparse8.0 libnvrtc8.0 libnvtoolsext1
 !ln -snf /usr/lib/x86_64-linux-gnu/libnvrtc-builtins.so.8.0 /usr/lib/x86_64-linux-gnu/libnvrtc-builtins.so
-!pip install cupy-cuda80 chainer
+!pip install cupy-cuda80 chainer=4.0.0
 ```
 
 ### Install ChainerCV and related libraries.
@@ -17,7 +17,7 @@
 !pip install Cython
 !pip install Matplotlib
 !pip install -U numpy
-!pip install chainercv
+!pip install chainercv==0.0.9
 ```
 
 ### Get Image
@@ -41,7 +41,9 @@ from chainercv.visualizations import vis_bbox
 %matplotlib inline
 ```
 
-### Execute Inference (GPU)
+### Execute Inference
+
+GPU version
 
 ```
 model = SSD300(
@@ -60,7 +62,7 @@ vis_bbox(
 plt.show()
 ```
 
-### Execute Inference (CPU)
+CPU version
 
 ```
 model = SSD300(
