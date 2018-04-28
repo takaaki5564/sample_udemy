@@ -1,4 +1,4 @@
-# Sample code for Tensorflow SSD
+# SSD sample code
 
 * [SSD inference sample of ChainerCV on Google Colaboratory](ssd_inference_chainer.md) 
 
