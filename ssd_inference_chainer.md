@@ -30,6 +30,8 @@ tf.test.gpu_device_name()
 ### Get Image
 ```
 !wget https:xxx.jpg
+# c.f. 
+!wget https://cdn.pixabay.com/photo/2017/04/27/11/21/dog-2265233_960_720.jpg
 ```
 
 ### Import Libraries
