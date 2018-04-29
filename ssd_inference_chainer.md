@@ -31,7 +31,8 @@ tf.test.gpu_device_name()
 ```
 !git clone https://github.com/chainer/chainercv.git
 # 過去のバージョンを取得
-!cd chainercv
+import os
+os.chdir("/content/chainercv/")
 !git checkout b0f0e5a257608196a2e389d3f5a782d544bfc6e3
 ```
 
