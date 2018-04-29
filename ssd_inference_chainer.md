@@ -24,7 +24,7 @@ tf.test.gpu_device_name()
 !pip install Cython
 !pip install Matplotlib
 !pip install -U numpy
-!pip install chainercv==0.0.9
+!pip install chainercv==0.9.0
 ```
 
 ### Get Image
