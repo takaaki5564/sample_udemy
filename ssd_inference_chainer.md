@@ -14,7 +14,7 @@ tf.test.gpu_device_name()
 ```
 !apt -y install libcusparse8.0 libnvrtc8.0 libnvtoolsext1
 !ln -snf /usr/lib/x86_64-linux-gnu/libnvrtc-builtins.so.8.0 /usr/lib/x86_64-linux-gnu/libnvrtc-builtins.so
-!pip install cupy-cuda80 chainer==4.0.0
+!pip install cupy-cuda80 chainer
 ```
 
 ### Install ChainerCV and related libraries.
@@ -24,16 +24,7 @@ tf.test.gpu_device_name()
 !pip install Cython
 !pip install Matplotlib
 !pip install -U numpy
-!pip install chainercv==0.9.0
-```
-
-### Get ChainerCV Sample
-```
-!git clone https://github.com/chainer/chainercv.git
-# 過去のバージョンを取得
-import os
-os.chdir("/content/chainercv/")
-!git checkout b0f0e5a257608196a2e389d3f5a782d544bfc6e3
+!pip install chainercv
 ```
 
 ### Get Image
