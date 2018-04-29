@@ -18,6 +18,8 @@ tf.test.gpu_device_name()
 # Tensorflow Object Detecionのモデルをgitclone
 !git clone https://github.com/tensorflow/models.git
 ```
+SHA:
+7f351c62f8e6c6789d76237bfdc43630714b9b8d
 
 ```
 # PATH設定
