@@ -17,13 +17,14 @@ tf.test.gpu_device_name()
 ```
 # Tensorflow Object Detecionのモデルをgitclone
 !git clone https://github.com/tensorflow/models.git
+
+import os
+os.chdir("/content/models")
+!git checkout 7f351c62f8e6c6789d76237bfdc43630714b9b8d
 ```
-SHA:
-7f351c62f8e6c6789d76237bfdc43630714b9b8d
 
 ```
 # PATH設定
-import os
 os.chdir("/content/models/research/")
 import sys
 sys.path.append('/content/models/research')
@@ -76,7 +77,10 @@ from PIL import Image
 
 from utils import label_map_util
 from utils import visualization_utils as vis_util
+```
 
+### Load Pretrained Model
+```
 # モデル読み込み
 # TensorflowではTensor(データ)とOperation(計算)から構成されるGraphとしてCNN演算を表現します
 
@@ -89,7 +93,7 @@ with detection_graph.as_default():
   od_graph_def = tf.GraphDef()
   
   # モデルファイル(protocol buffer形式)を指定してロード
-  with tf.gfile.GFile('ssd_mobilenet_v1_coco_11_06_2017/frozen_inference_graph.pb', 'rb') as fid:
+  with tf.gfile.GFile('ssd_mobilenet_v1_coco_2017_11_17/frozen_inference_graph.pb', 'rb') as fid:
     # バイナリファイルにシリアライズされたgraphデータを読み込み
     serialized_graph = fid.read()
     # graph構造をparseしてオブジェクトに設定
