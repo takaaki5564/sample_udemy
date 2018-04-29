@@ -37,14 +37,12 @@ https://cdn.pixabay.com/photo/2017/04/27/11/21/dog-2265233_960_720.jpg
 ### Import Libraries
 
 ```
-import argparse
 import matplotlib.pyplot as plt
 
 import chainer
 
 from chainercv.datasets import voc_bbox_label_names
 from chainercv.links import SSD300
-from chainercv.links import SSD512
 from chainercv import utils
 from chainercv.visualizations import vis_bbox
 %matplotlib inline
@@ -68,4 +66,8 @@ vis_bbox(
     img, bbox, label, score, label_names=voc_bbox_label_names)
 plt.show()
 ```
+
+reference:
+https://github.com/chainer/chainercv/blob/master/examples/ssd/demo.py
+
 
