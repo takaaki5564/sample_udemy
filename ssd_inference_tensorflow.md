@@ -47,13 +47,14 @@ os.chdir("/content/models/research/")
 os.chdir("/content/models/research/slim")
 !python setup.py build
 !python setup.py install
-```
 
-```
-# Tensorflow Object Detection APIがインストールされたことの確認
 os.chdir("/content/models/research")
 !python object_detection/builders/model_builder_test.py
 ```
+
+"OK"と表示されれれば正常。
+
+<br>
 
 ### Download SSD model pre-trained by MS-COCO Dataset
 
