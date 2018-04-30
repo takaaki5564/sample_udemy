@@ -9,7 +9,7 @@ tf.test.gpu_device_name()
 
 ### Install Tensorflow Objectdetection API
 
-Git clone
+
 ```
 # Related Libraries
 !apt-get -y install protobuf-compiler python-pil python-lxml python-tk
