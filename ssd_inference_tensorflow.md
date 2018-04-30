@@ -7,24 +7,21 @@ import tensorflow as tf
 tf.test.gpu_device_name()
 ```
 
-### Install Tensorflow Objectdetection API and related libraries
+### Install Tensorflow Objectdetection API
+
+Git clone
 ```
-# 必要ライブラリのインストール
+# Related Libraries
 !apt-get -y install protobuf-compiler python-pil python-lxml python-tk
 !pip install matplotlib
-```
 
-```
-# Tensorflow Object Detecionのモデルをgitclone
+# Git clone
 !git clone https://github.com/tensorflow/models.git
-
 import os
 os.chdir("/content/models")
 !git checkout 7f351c62f8e6c6789d76237bfdc43630714b9b8d
-```
 
-```
-# PATH設定
+# Set PATH
 os.chdir("/content/models/research/")
 import sys
 sys.path.append('/content/models/research')
@@ -32,16 +29,19 @@ sys.path.append('/content/models/research/slim')
 sys.path.append('/content/models/research/object_detection')
 ```
 
+
+Compile Protobuf Library（モデルの設定と学習に使用）
+
 ```
-# Protobufライブラリのコンパイル(モデル設定と学習に使用)
+os.chdir("/content/models/research/")
 !protoc object_detection/protos/*.proto --python_out=.
 !python setup.py build
 !python setup.py install
 ```
 
+Build Tensorflow-Slim Model
 
 ```
-# Tensorflow-Slimモデルのビルドとインストール
 os.chdir("/content/models/research/slim")
 !python setup.py build
 !python setup.py install
@@ -53,8 +53,9 @@ os.chdir("/content/models/research")
 !python object_detection/builders/model_builder_test.py
 ```
 
+# Download SSD model pre-trained by MS-COCO Dataset
+
 ```
-# SSD(mobilenet)の学習済みモデルをダウンロード（cocoデータセットを用いて学習)
 os.chdir('/content/models/research/object_detection/')
 !wget http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_2017_11_17.tar.gz
 !tar -xzvf ssd_mobilenet_v1_coco_2017_11_17.tar.gz
@@ -62,6 +63,7 @@ os.chdir('/content/models/research/object_detection/')
 
 
 ### Defein Python code
+
 ```
 import numpy as np
 import sys
@@ -77,10 +79,7 @@ from PIL import Image
 
 from utils import label_map_util
 from utils import visualization_utils as vis_util
-```
 
-### Load Pretrained Model
-```
 # モデル読み込み
 # TensorflowではTensor(データ)とOperation(計算)から構成されるGraphとしてCNN演算を表現します
 
@@ -116,11 +115,7 @@ categories = label_map_util.convert_label_map_to_categories(label_map, max_num_c
 
 # カテゴリidを入力としてkey名を取得するための辞書を作成
 category_index = label_map_util.create_category_index(categories)
-```
 
-### Define load function
-
-```
 # 画像データを[width,height,3]次元のnumpy配列に変換
 def load_image_into_numpy_array(image):
   (im_width, im_height) = image.size
@@ -141,10 +136,7 @@ im = Image.open('./test_images/image1.jpg')
 im_arr = np.asarray(im)
 plt.imshow(im_arr)
 plt.show()
-```
 
-
-```
 im = Image.open('./test_images/image2.jpg')
 im_arr = np.asarray(im)
 plt.imshow(im_arr)
