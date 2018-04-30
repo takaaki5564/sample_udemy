@@ -30,7 +30,9 @@ sys.path.append('/content/models/research/object_detection')
 ```
 
 
-Compile Protobuf Library（モデルの設定と学習に使用）
+### Compile Protobuf Library
+
+モデルの設定と学習に使用
 
 ```
 os.chdir("/content/models/research/")
@@ -39,7 +41,7 @@ os.chdir("/content/models/research/")
 !python setup.py install
 ```
 
-Build Tensorflow-Slim Model
+### Build Tensorflow-Slim Model
 
 ```
 os.chdir("/content/models/research/slim")
@@ -53,7 +55,7 @@ os.chdir("/content/models/research")
 !python object_detection/builders/model_builder_test.py
 ```
 
-# Download SSD model pre-trained by MS-COCO Dataset
+### Download SSD model pre-trained by MS-COCO Dataset
 
 ```
 os.chdir('/content/models/research/object_detection/')
