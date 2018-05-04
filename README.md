@@ -1,4 +1,8 @@
-# SSD sample code
+# Sample code
+
+This is sample code for Udemy project.
+
+<br>
 
 ## SSD Inference sample
 
