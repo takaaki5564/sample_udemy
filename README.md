@@ -1,6 +1,6 @@
 # Sample code
 
-This is sample code for Udemy project.
+This is sample codes for Udemy project.
 
 <br>
 
