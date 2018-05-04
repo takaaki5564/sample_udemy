@@ -12,9 +12,9 @@ This is sample codes for Udemy project.
 
 ## SSD Train sample
 
-* [SSD training with Tensorflow Object Detection API on AWŚ](TensorflowAWS.md)
+* [SSD training with Tensorflow Object Detection API on Amazon AWŚ](TensorflowAWS.md)
 
-* [SSD training with ChainerCV on AWŚ](ChainercvAWS.md)
+* [SSD training with ChainerCV on Amazon AWŚ](ChainercvAWS.md)
 
 ## Tool
 
