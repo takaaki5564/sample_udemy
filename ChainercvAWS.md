@@ -4,7 +4,7 @@
 
 ## Preparation
 
-### Log in to your Deep Learning AMI (Ubuntu), instance type = p2.xlarge
+Log in to your Deep Learning AMI (Ubuntu), instance type = p2.xlarge
 
 
 Create a conda environment
@@ -14,7 +14,7 @@ conda create -n chainer python=3.6 anaconda
 source activate chainer
 ```
 
-### Install Chainer
+Install Chainer
 
 ```
 pip install -U numpy
@@ -23,7 +23,7 @@ pip install chainer
 pip install chainercv
 ```
 
-### Install Related Libraries
+Install Related Libraries
 
 ```
 conda install -c https://conda.anaconda.org/menpo opencv3
@@ -34,15 +34,13 @@ sudo apt-get install zip unzip
 sudo apt-get -y install imagemagick
 ```
 
-### Get sample code of ChainerCV
+Get sample code of ChainerCV
 
 ```
 https://github.com/chainer/chainercv.git
 cd chainercv
 git checkout b0f0e5a257608196a2e389d3f5a782d544bfc6e3
 ```
-
-### Install Path
 
 ChainerCV Install Path
 ```
@@ -63,6 +61,7 @@ Expanded Train Datasets
 cd chainercv/example/ssd
 python train.py --batchsize 8 --gpu 0 
 ```
+<br>
 
 ## Evaluate Train Result
 
