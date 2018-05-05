@@ -64,6 +64,7 @@ vim train.py
 ```
 :
 def main():
+    :
     #train_iter = chainer.iterators.MultiprocessIterator(train, args.batchsize)
     train_iter = chainer.iterators.SerialIterator(train, args.batchsize)
     :
