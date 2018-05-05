@@ -21,7 +21,9 @@ cd image-labeling-tool
 pip install -e .
 ```
 
-### Label images
+<br>
+
+### Label Images
 
 Collect images
 
