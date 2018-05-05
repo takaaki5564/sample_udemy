@@ -65,7 +65,9 @@ python train.py --batchsize 8 --gpu 0
 
 ## Evaluate Train Result
 
-Launch another terminal for evaluation
+Launch another terminal and log in to AWS server for evaluation
+
+Check result and copy images for evaluation 
 
 ```
 cd chainercv/example/ssd
@@ -74,7 +76,7 @@ mkdir image
 cp /home/ubuntu/.chainer/dataset/pfnet/chainercv/voc/VOCdevkit/VOC2007/JPEGImages/00000*.jpg ./image/
 ```
 
-Edit demo.py to save result images.
+Edit demo.py to save result images
 
 ```
 vim demo.py
