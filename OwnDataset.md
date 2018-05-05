@@ -98,6 +98,19 @@ Divide dataset to train/val
 python randomly_split_directory.py ./pet/train ./pet/val ./pet/images/
 ```
 
+Modify train_util.py as follows
+
+```
+def train(
+    :
+    else:
+        #train_iter = chainer.iterators.MultiprocessIterator(
+        #    train_data, batchsize, n_processes=min((loaderjob, batchsize)))
+        train_iter = chainer.iterators.SerialIterator(
+            train_data, batchsize)
+            :
+```
+
 Start training with your own dataset
 
 ```
