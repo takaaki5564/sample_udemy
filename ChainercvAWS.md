@@ -27,11 +27,9 @@ Install Related Libraries
 
 ```
 conda install -c https://conda.anaconda.org/menpo opencv3
-pip install -U numpy
 pip install matplotlib
 pip install pillow
 sudo apt-get install zip unzip
-sudo apt-get -y install imagemagick
 ```
 
 Get sample code of ChainerCV
