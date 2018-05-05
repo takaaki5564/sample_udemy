@@ -43,10 +43,10 @@ python flask_app.py --image_dir examples/pet/images --label_names examples/pet/l
 ```
 1. Open web browser on your local PC and access to http://127.0.0.1:5000
 1. Label images
-  1. Click "Draw box" button
-  1. Draw bounding box for the labeled region using left-click
-  1. Select labels in "Labels" pulldown menu (\*1)
-  1. Draw bounding box for all the images
+    1. Click "Draw box" button
+    1. Draw bounding box for the labeled region using left-click
+    1. Select labels in "Labels" pulldown menu (\*1)
+    1. Draw bounding box for all the images
 
 \*1
 最後に全ての画像に "Labels" が登録されていることを確認してください。
