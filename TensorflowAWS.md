@@ -199,15 +199,17 @@ http://YourInstancePublicDNS:6006
 
 Install pycocotool
 ```
+cd ~
 sudo pip install Cython
 git clone https://github.com/cocodataset/cocoapi
-cd pycoco/cocoapi/PythonAPI
+cd cocoapi/PythonAPI
 python setup.py build
 python setup.py install
 ```
 
 Evaluate trained model
 ```
+cd ~/tensorflow/models/research/object_detection/
 mkdir my_eval
 python eval.py --logtostderr \
  --pipeline_config_path=ssd_inception_v3_voc.config \
