@@ -112,6 +112,7 @@ https://github.com/tensorflow/models/tree/master/research/slim
 
 Now we use inception_v3 model as the base network.
 ```
+cd ~/tensorflow/models/research/object_detection/
 mkdir my_model
 cd ./my_model
 wget http://download.tensorflow.org/models/inception_v3_2016_08_28.tar.gz
@@ -126,6 +127,7 @@ The chekpoint file "inception_v3.ckpt" is expanded.
 
 Edit your own config file
 ```
+cd ~/tensorflow/models/research/object_detection/
 cp ./samples/configs/ssd_inception_v3_pets.config ./ssd_inception_v3_voc.config
 vim ./ssd_inception_v3_voc.config
 ```
