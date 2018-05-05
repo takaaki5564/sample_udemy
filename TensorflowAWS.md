@@ -29,11 +29,14 @@ cd ~
 mkdir tensorflow
 cd tensorflow
 git clone https://github.com/tensorflow/models.git
+
+cd models
+git checkout 7f351c62f8e6c6789d76237bfdc43630714b9b8d
 ```
 
 Build model
 ```
-cd models/research
+cd research
 protoc object_detection/protos/*.proto --python_out=.
 python setup.py build
 python setup.py install
