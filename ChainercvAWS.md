@@ -55,8 +55,41 @@ Expanded Train Datasets
 
 ## Train SSD-300 with VOC Dataset
 
+Edit train.py
 ```
-cd chainercv/example/ssd
+cd ~/chainercv/example/ssd
+vim train.py
+```
+
+```
+:
+def main():
+    #train_iter = chainer.iterators.MultiprocessIterator(train, args.batchsize)
+    train_iter = chainer.iterators.SerialIterator(train, args.batchsize)
+    :
+    trainer.extend(
+        #extensions.ExponentialShift('lr', 0.1, init=1e-3),
+        extensions.ExponentialShift('lr', 0.1, init=5e-4),
+        trigger=triggers.ManualScheduleTrigger([80000, 100000], 'iteration'))
+    
+    trainer.extend(
+        DetectionVOCEvaluator(
+            test_iter, model, use_07_metric=True,
+            label_names=voc_bbox_label_names),
+        #trigger=(10000, 'iteration'))    
+        trigger=(2000, 'iteration'))  
+        :
+    #trainer.extend(extensions.snapshot(), trigger=(10000, 'iteration'))
+    trainer.extend(extensions.snapshot(), trigger=(2000, 'iteration'))
+    trainer.extend(
+        extensions.snapshot_object(model, 'model_iter_{.updater.iteration}'),
+        #trigger=(120000, 'iteration'))
+        trigger=(2000, 'iteration'))
+        :
+```
+
+Run train.py
+```
 python train.py --batchsize 8 --gpu 0 
 ```
 <br>
