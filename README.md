@@ -16,6 +16,4 @@ This is sample codes for Udemy project.
 
 * [SSD training with Tensorflow Object Detection API on Amazon AWŚ](TensorflowAWS.md)
 
-## Tool
-
-* [Image Labeling Tool](https://github.com/takaaki5564/image-labelling-tool)
+* [SSD training with your own dataset using Image Labeling Tool](OwnDataset.md)
