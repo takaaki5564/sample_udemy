@@ -1,11 +1,15 @@
 
-### Train SSD with your own dataset
+## Train SSD with your own dataset
+
+<br>
 
 Use image-labelling-tool
 
 https://github.com/takaaki5564/image-labelling-tool
 
 <br>
+
+### Preparation
 
 Setup python 3.6 environment on your local PC and install image-labeling-tool.
 
@@ -15,7 +19,8 @@ cd image-labeling-tool
 pip install -e .
 ```
 
-Setup your own dataset as follows.
+### Label images
+
 
 1. Copy and rename example/simple directory (e.g. example/pet)
 1. Edit label_name_example.yml and register your labels (e.g. dog and cat)
@@ -44,6 +49,7 @@ cd ~
 scp -i (keyfilename).pem ./image-labeling-tool/examples/pet.zip ubuntu@52.40.30.xxx:/home/ubuntu/
 ```
 
+### Train SSD300 with your own Dataset
 
 Connect to AWS server on another terminal
 ```
