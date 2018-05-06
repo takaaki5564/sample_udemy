@@ -239,3 +239,31 @@ for i in range(len(output_dict['detection_classes'])):
          output_dict['detection_scores'][i], # スコアの値
          np.array(output_dict['detection_boxes'][i].tolist()*np.array([x,y,x,y]), dtype='int')) # 画像上のbox座標
 ```
+
+### Run Inference for your Own Data
+```
+if 1:
+  # 画像の読み込み
+  image = Image.open('./YOUR_IMAGE_NAME.jpg')
+  # 画像をnumpy配列に変換
+  image_np = load_image_into_numpy_array(image)
+  # 画像データの0次元目を追加(バッチ分の次元)
+  image_np_expanded = np.expand_dims(image_np, axis=0)
+  
+  # 推論処理の実行
+  # 戻り値として辞書に登録したkeyの出力を得る
+  output_dict = run_inference_for_single_image(image_np, detection_graph)
+  
+  # ユーティリティ関数を使用して可視化
+  vis_util.visualize_boxes_and_labels_on_image_array(
+      image_np,                                         # numpy配列の画像データ
+      output_dict['detection_boxes'],   # 検出されたbbox
+      output_dict['detection_classes'], # 検出されたbboxのクラス
+      output_dict['detection_scores'],  # 検出されたbboxのスコア
+      category_index,                               # カテゴリidとカテゴリ名の辞書　
+      instance_masks=None,                   # segmentation用マスク（今回は不使用）
+      use_normalized_coordinates=True, # 画像サイズで規格化されたbbox位置(ymin, xmin, ymax, xmax)
+      line_thickness=8)
+  plt.figure(figsize=IMAGE_SIZE)
+  plt.imshow(image_np)
+  ```
