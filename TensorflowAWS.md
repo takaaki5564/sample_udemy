@@ -175,8 +175,9 @@ python ./train.py --logtostderr --train_dir=./my_model --pipeline_config_path=ss
 
 ## Monitoring progress on Tensorboard
 
-Launch Tensorboard process
+Launch new terminal and start Tensorboard process
 ```
+cd ~/tensorflow/models/research/object_detection/
 tensorboard --logdir=./my_model/
 ```
 
