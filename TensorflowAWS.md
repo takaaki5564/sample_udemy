@@ -176,7 +176,9 @@ python ./train.py --logtostderr --train_dir=./my_model --pipeline_config_path=ss
 ## Monitoring progress on Tensorboard
 
 Launch new terminal and start Tensorboard process
+
 ```
+source activate tensorflow
 cd ~/tensorflow/models/research/object_detection/
 tensorboard --logdir=./my_model/
 ```
@@ -204,8 +206,9 @@ http://YourInstancePublicDNS:6006
 
 ### Evaluate trained model on Tensorboard
 
-Install pycocotool
+Launch new terminal and Install pycocotool
 ```
+source activate tensorflow
 cd ~
 sudo pip install Cython
 git clone https://github.com/cocodataset/cocoapi
@@ -215,6 +218,7 @@ python setup.py install
 ```
 
 Evaluate trained model
+
 ```
 cd ~/tensorflow/models/research/object_detection/
 mkdir my_eval
