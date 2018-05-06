@@ -188,6 +188,12 @@ Protocol: TCP
 Port Range: 6006
 Source: Anywhere (0.0.0.0/0,::/0)
 ```
+```
+Type : SSH
+Protocol: TCP
+Port Range: 22
+Source: (MyIP)
+```
 
 Open the browser and type in address
 ```
