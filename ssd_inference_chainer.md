@@ -12,9 +12,9 @@ tf.test.gpu_device_name()
 ### Install Chainer and related libraries.
 
 ```
-!apt -y install libcusparse8.0 libnvrtc8.0 libnvtoolsext1
-!ln -snf /usr/lib/x86_64-linux-gnu/libnvrtc-builtins.so.8.0 /usr/lib/x86_64-linux-gnu/libnvrtc-builtins.so
-!pip install cupy-cuda80 chainer
+!curl https://colab.chainer.org/install | sh -
+!ln -snf /usr/lib/x86_64-linux-gnu/libnvrtc-builtins.so.9.2 /usr/lib/x86_64-linux-gnu/libnvrtc-builtins.so
+!pip install chainer
 ```
 
 ### Install ChainerCV and related libraries.
@@ -23,7 +23,6 @@ tf.test.gpu_device_name()
 !pip install Pillow
 !pip install Cython
 !pip install Matplotlib
-!pip install -U numpy
 !pip install chainercv
 ```
 
